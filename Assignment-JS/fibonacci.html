@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Assignment</title> 
+	<link rel="stylesheet" href="stylesheet.css">
+	<script>
+		function fib(n){
+			if(n<=2){
+				return 1;
+			}
+			else{
+				return fib(n-1) + fib(n-2);
+			}
+		}
+		function input_output(){
+			n = document.getElementById("num_id").value;
+			message = document.querySelector('#message_id');
+			
+			message.append("First N Numbers of the Fibonacci Sequence are = ");
+			for(var i=1; i<=n; i++){
+				var temp = fib(i);
+				message.append(temp);
+				message.append(" ");
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+	<h1> Fibonacci Sequence </h1>
+	<form>
+	<label for="num"><b> Enter N: </b> </label>
+	<input id ="num_id" type="number" name="num"> <br/> <br/>
+	</form>
+	<button onclick= "input_output()">Submit</button><br/>
+	<p id="message_id"></p>
+	
+	
+
+</body>
+
+</html>

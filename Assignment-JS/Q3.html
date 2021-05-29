@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Assignment</title> 
+	<link rel="stylesheet" href="stylesheet.css">
+
+</head>
+
+<body>
+	<h1> Most Frequest charecters </h1>
+	<form>
+	<label for="string"><b> Enter the string: </b> </label>
+	<input id ="str_id" type="text" name="string"> <br/> <br/>
+	</form>
+	<button onclick= "max_frequency()">Submit</button><br/>
+	<p id="message_id"></p>
+	
+	<script>
+		function max_frequency(){
+			var str = document.getElementById("str_id").value;
+			var dict = {};
+			var i=0;
+
+			for (i = 0; i < str.length; i++) {
+				if(str[i] === "," || str[i] === " "){
+					continue;
+				}
+				if(str[i] in dict){
+					dict[str[i]] +=1;
+				}
+				else{
+					dict[str[i]]=1;
+				}
+				
+			}
+			
+			var max=0;
+			var max_char="$";
+			for (var key in dict){
+				if(dict[key] > max){
+					max = dict[key];
+					max_char=key;
+				}
+			}
+			
+			document.getElementById("message_id").innerHTML = `Most Frequent charecters = ${max_char}, Number of occurences =${max}`;
+		}
+
+	</script>
+
+</body>
+
+</html>

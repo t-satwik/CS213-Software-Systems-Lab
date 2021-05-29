@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Assignment</title> 
+	<link rel="stylesheet" href="stylesheet.css">
+	<script>
+		function gcd(num1, num2){
+			if(num2 === 0){
+      			return num1;
+   			}
+   			return gcd(num2, num1 % num2);
+		}
+		function input_output(){
+			num1 = document.getElementById("num1").value;
+    		num2 = document.getElementById("num2").value;
+    		result = gcd(num1 , num2);
+    		var message="gcd=";
+			document.getElementById("message_id").innerHTML = `Greatest Common Divisor = ${result}`;
+		}
+	</script>
+</head>
+
+<body>
+	<h1> Greatest Common Divisors </h1>
+	<form>
+	<label for="num1"><b> Number 1: </b> </label>
+	<input id ="num1" type="number" name="num1"> <br/> <br/>
+	<label for="num2"><b> Number 2: </b> </label>
+	<input id ="num2" type="number" name="num2"> <br/> <br/>
+	</form>
+
+	<button onclick= "input_output()">Submit</button><br/>
+	<p id="message_id"></p>
+	
+	
+
+</body>
+
+</html>

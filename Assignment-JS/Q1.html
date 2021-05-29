@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Assignment part 1</title> 
+	<link rel="stylesheet" href="stylesheet.css">
+	<script>
+		function check() {
+  			var age_inp, message;
+ 			age_inp = document.getElementById("age_id").value;
+
+ 			if (age_inp < 18 || age_inp > 100) {
+    			message = "You are not eligible to obtain a Drivers Licence";
+    		}
+
+  	 		else {
+    		message = "You are eligible to obtain a Drivers Licence";
+  			}
+  			document.getElementById("message_id").innerHTML = message;
+		}
+	</script>
+</head>
+
+<body>
+	<h1> Drivers Licence Eligibilty Check </h1>
+	<form>
+	<label for="age"><b> Age: </b> </label>
+	<input id ="age_id" type="number" name="age"> <br/> <br/>
+	</form>
+	<button onclick= "check()">Submit</button><br/>
+	<p id="message_id"></p>
+	
+	
+
+</body>
+
+</html>

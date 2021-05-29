@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Assignment</title> 
+	<link rel="stylesheet" href="stylesheet.css">
+	<script>
+		class User{
+			constructor(name, address, phone, email, education, age) {
+    			this.name = name;
+    			this.address=address;
+    			this.phone=phone;
+    			this.email=email;
+    			this.education=education;
+    			this.age=age;
+  		}
+ 
+  		display(){
+  			  var userinfo = document.getElementById("table_id");
+
+    		  var row1 = userinfo.insertRow();
+          var r1c1 = row1.insertCell();6
+          var r1c2 = row1.insertCell();
+          r1c1.innerHTML = "User.Name";
+          r1c2.innerHTML = this.name;
+
+ 				  var row2 = userinfo.insertRow();
+          var r2c1 = row2.insertCell();
+          var r2c2 = row2.insertCell();
+          r2c1.innerHTML = "User.address";
+          r2c2.innerHTML = this.address;
+
+				  var row3 = userinfo.insertRow();
+          var r3c1 = row3.insertCell();
+          var r3c2 = row3.insertCell();
+          r3c1.innerHTML = "User.Phone Number";
+          r3c2.innerHTML = this.phone;
+
+  				var row4 = userinfo.insertRow();
+          var r4c1 = row4.insertCell();
+          var r4c2 = row4.insertCell();
+          r4c1.innerHTML = "User.EmailId";
+          r4c2.innerHTML = this.email;
+
+				  var row5 = userinfo.insertRow();
+  			  var r5c1 = row5.insertCell();
+          var r5c2 = row5.insertCell();
+          r5c1.innerHTML = "User.Educational Qualifications";
+          r5c2.innerHTML = this.education;
+
+          var row6 = userinfo.insertRow();
+          var r6c1 = row6.insertCell();
+          var r6c2 = row6.insertCell();
+          r6c1.innerHTML = "User.Age";
+          r6c2.innerHTML = this.age;
+		  }
+    }
+
+    function myFunction(){
+	      var name = document.getElementById("name_id").value;
+		    var address = document.getElementById("address_id").value;
+	 	    var phone = document.getElementById("phone_id").value;
+		    var email = document.getElementById("email_id").value;
+		    var education = document.getElementById("education_id").value;
+		    var age = document.getElementById("age_id").value;
+		    new_user = new User(name, address, phone, email, education, age);
+        new_user.display();
+    }
+
+	</script>
+</head>
+
+<body>
+	<h1> User Information </h1>
+	<form>
+
+	<label for="name"><b> Enter your name: </b> </label>
+	<input id ="name_id" type="text" name="name"> <br/> <br/>
+
+	<label for="address"><b> Enter your address: </b> </label>
+	<input id ="address_id" type="text" name="address"> <br/> <br/>
+
+	<label for="phone"><b> Enter your Phone number: </b> </label>
+	<input id ="phone_id" type="number" name="phone"> <br/> <br/>
+
+	<label for="email"><b> Enter your Email ID: </b> </label>
+	<input id ="email_id" type="email" name="email"> <br/> <br/>
+
+	<label for="education"><b> Enter your Educational Qualifications: </b> </label>
+	<input id ="education_id" type="text" name="education"> <br/> <br/>
+
+	<label for="age"><b> Enter your Age: </b> </label>
+	<input id ="age_id" type="number" name="age"> <br/> <br/>
+
+	</form>
+	<button onclick= "myFunction()">Submit</button><br/>
+  
+	<div><table id="table_id"></table></div>
+
+</body>
+
+</html>
+
+
+

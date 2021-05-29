@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Assignment</title>
+	<link rel="stylesheet" href="stylesheet.css"> 
+	<script>
+		function palindrome() {
+			var message;
+			var input_str = document.getElementById("string_id").value;
+  			var reverse_str = input_str.split('').reverse().join(''); 
+  			if(input_str == reverse_str){
+  				message="Given string is a palindrome";
+  			}
+  			else{
+  				message="Given string is not a palindrome"
+  			}
+  			document.getElementById("message_id").innerHTML = message;
+		}
+		
+	</script>
+</head>
+
+<body>
+	<h1> Palindrome Check </h1>
+	<form>
+	<label for="string"><b> String: </b> </label>
+	<input id ="string_id" type="text" name="string"> <br/> <br/>
+	</form>
+	<button onclick= "palindrome()">Submit</button><br/>
+	<p id="message_id"></p>
+	
+	
+
+</body>
+
+</html>
